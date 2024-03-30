@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useProducStates } from "../Context/GlobalContext";
+import "./Card.css";
 
 const Card = ({ doctor }) => {
   const { state, dispatch } = useProducStates();
@@ -12,10 +13,10 @@ const Card = ({ doctor }) => {
 
   return (
     <div className="card">
-      <Link to={`/dentista/${doctor.id}`}>
+      <Link to={`/dentista/${doctor.id}`} className="card-ul">
         {/* En cada card deberan mostrar en name - username y el id */}
         <img src="./images/doctor.jpg" style={{ width: 200 }} />
-        <p>{doctor.name}</p>
+        <h3>{doctor.name}</h3>
         <p>{doctor.username}</p>
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 

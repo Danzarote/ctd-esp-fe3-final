@@ -10,9 +10,11 @@ const Form = () => {
   const [mostrar, setMostrar] = useState(false);
   const [error, setError] = useState(false);
 
+  let regex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+
   const handleSubmit = (evento) => {
     evento.preventDefault();
-    if (info.name.trimStart().length >= 5) {
+    if (info.name.trimStart().length >= 5 && regex.test(info.email)) {
       setMostrar(true);
       setError(false);
     } else {

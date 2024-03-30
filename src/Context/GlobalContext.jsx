@@ -12,7 +12,6 @@ const lsfavs = JSON.parse(localStorage.getItem("favs"));
 
 const GlobalContext = ({ children }) => {
   let initialState = {
-    apiResponse: [],
     favs: lsfavs || [],
     darkMode: false,
   };
@@ -28,11 +27,6 @@ const GlobalContext = ({ children }) => {
         return {
           ...state,
           favs: [],
-        };
-      case "ADD_API_RESPONSE":
-        return {
-          ...state,
-          apiResponse: [action.payload],
         };
       case "CHANGE_THEME":
         return {

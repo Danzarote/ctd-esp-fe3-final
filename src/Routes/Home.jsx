@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../Components/Card";
 import { useProducStates } from "../Context/GlobalContext";
+import "./Home.css";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
@@ -13,9 +14,9 @@ const Home = () => {
       .then((res) => res.json())
       .then((res) => setDoctor(res));
   }, []);
-  console.log(doctors);
+
   return (
-    <main className="">
+    <main className={state.darkMode ? "darkMode" : "lightMode"}>
       <h1>Home</h1>
       <div className="card-grid">
         {doctors.map((doctor) => {

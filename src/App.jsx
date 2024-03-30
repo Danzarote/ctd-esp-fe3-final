@@ -12,7 +12,7 @@ function App() {
       <GlobalContext>
         <Routes>
           <Route element={<Layaout />}>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/dentista/:id" element={<Detail />} />
             <Route path="/favs" element={<Favs />} />
